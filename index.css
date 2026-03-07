@@ -3,7 +3,7 @@
     --card-bg: #161b22;
     --text-primary: #e6edf3;
     --text-secondary: #8b949e;
-    --accent: #58a6ff; 
+    --accent: #58a6ff;
     --border: #30363d;
 }
 
@@ -19,7 +19,8 @@ body {
     align-items: center;
 }
 
-header, main {
+header,
+main {
     width: 100%;
     max-width: 800px;
 }
@@ -32,6 +33,16 @@ header {
     border: 1px solid var(--border);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.profile-photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--border);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 h1 {
@@ -49,7 +60,7 @@ h2 {
 }
 
 p {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 1rem;
 }
 
@@ -64,7 +75,8 @@ a {
     transition: color 0.2s ease, text-decoration 0.2s ease;
 }
 
-a:hover, a:focus {
+a:hover,
+a:focus {
     color: #79c0ff;
     text-decoration: underline;
 }
@@ -83,7 +95,8 @@ nav a {
     background-color: rgba(255, 255, 255, 0.05);
 }
 
-nav a:hover, nav a:focus {
+nav a:hover,
+nav a:focus {
     background-color: rgba(255, 255, 255, 0.1);
     text-decoration: none;
 }
@@ -97,27 +110,103 @@ section {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-ul {
+/* Layout Grids and Cards */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    border-color: var(--accent);
+}
+
+.project-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+}
+
+.project-card p {
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* Skills and Tags */
+.skills-category {
+    margin-bottom: 2rem;
+}
+
+.skills-category h3 {
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.skills-category h4 {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.skill-tags li {
+    background-color: rgba(88, 166, 255, 0.1);
+    color: var(--accent);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    /* Pill shape */
+    border: 1px solid rgba(88, 166, 255, 0.2);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.cert-list {
     list-style-type: none;
     padding-left: 0;
 }
 
-li {
+.cert-list li {
     background: rgba(255, 255, 255, 0.02);
     margin-bottom: 0.75rem;
     padding: 1rem;
     border-radius: 4px;
     border-left: 4px solid var(--accent);
-    color: var(--text-secondary);
+    color: var(--text-primary);
 }
 
 @media (max-width: 600px) {
     body {
         padding: 1rem;
     }
+
     header {
         padding: 1.5rem;
     }
+
     section {
         padding: 1.5rem;
     }
